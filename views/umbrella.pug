@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  div(class="container-fluid")
+  - let results=[{colour:"red",cost:77,height :5},{colour:"blue",cost:99,height :7},{colour:"blue",cost:23.2 ,height:5}]
+  div(class="row")
+    each value,index in results
+      div(class="col-sm-2" onclick=`buy(${index})`)  umbrella #{value.colour} , cost #{value.cost}, height  #{value.height}
+  script.
+    function buy(index)
+    {
+      alert(`Your purchased Item ${index+1}`)
+    }
