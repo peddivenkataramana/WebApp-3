@@ -23,3 +23,16 @@ exports.umbrella_delete = function(req, res) {
 exports.umbrella_update_put = function(req, res) { 
     res.send('NOT IMPLEMENTED: Umbrella update PUT' + req.params.id); 
 }; 
+
+// List of all Costumes 
+exports.umbrella_list = async function(req, res) { 
+    try{ 
+        theUmbrella = await Umbrella.find(); 
+        res.send(theUmbrella); 
+    } 
+    catch(err){ 
+        res.status(500); 
+        res.send(`{"error": ${err}}`); 
+    }   
+}; 
+ 
