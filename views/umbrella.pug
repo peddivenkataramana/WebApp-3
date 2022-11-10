@@ -7,7 +7,7 @@ block content
   - let items = results 
   div(class="row")
     each value,index in results
-      div(class="col-sm-2" onclick=`buy(${index})`)  umbrella #{value.colour} , cost #{value.cost}, height  #{value.height}
+      div(class="col-sm-2" onclick=`buy(${index})`)  umbrella #{value.color} , cost #{value.cost}, height  #{value.hieght}
   script.
     function buy(index)
     {
