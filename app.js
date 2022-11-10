@@ -84,7 +84,7 @@ let instance2 = new
 Umbrella({color:"blue",  cost:2, hieght:7}); 
   instance2.save( function(err,doc) { 
       if(err) return console.error(err); 
-      console.log("First object saved") 
+      console.log("Second object saved") 
   }); 
 
 
@@ -92,7 +92,7 @@ let instance3 = new
 Umbrella({color:"black",  cost:3, hieght:33}); 
   instance3.save( function(err,doc) { 
       if(err) return console.error(err); 
-      console.log("First object saved") 
+      console.log("Third object saved") 
   }); 
 
 }
