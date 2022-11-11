@@ -98,3 +98,6 @@ Umbrella({color:"black",  cost:3, hieght:33});
 }
 let reseed = true; 
 if (reseed) { recreateDB();} 
+
+
+ 
