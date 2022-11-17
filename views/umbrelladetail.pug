@@ -2,22 +2,23 @@ extends layout
  
 block content 
   h1= title 
- 
+  if (toShow == null) 
+    h2 No instance to details 
+  else 
   - let umbrellaid = toShow._id 
   - let umbrella_type = toShow.color 
   - let umbrellacost = toShow.cost 
   - let umbrellasize = toShow.hieght  
   div 
     div.row 
-      div(class='umbrellaAttr mr-3') Umbrella ID is: 
+      div(class='umbrellastyle mr-3') Umbrella ID is: 
       div #{umbrellaid} 
     div.row 
-      div(class='umbrellaAttr mr-3') Umbrella color is: 
+      div(class='umbrellastyle mr-3') Umbrella color is: 
       div #{umbrella_type} 
     div.row 
-      div(class='umbrellaAttr mr-3') Umbrella cost is: 
+      div(class='umbrellastyle mr-3') Umbrella cost is: 
       div #{umbrellacost} 
     div.row 
-      div(class='umbrellaAttr mr-3') Umbrella height is: 
+      div(class='umbrellastyle mr-3') Umbrella height  is: 
       div #{umbrellasize} 
- 

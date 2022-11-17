@@ -2,7 +2,9 @@ extends layout
  
 block content 
   h1= title 
- 
+  if (toShow == null) 
+    h2 No instance to update 
+  else 
   - let umbrellaid = toShow._id 
   - let umbrella_type = toShow.color 
   - let umbrellacost = toShow.cost 

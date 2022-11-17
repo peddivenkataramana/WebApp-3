@@ -11,3 +11,11 @@ a {
   background-color: aquamarine; 
   width: 200px; 
 } 
+
+.umbrellastyle{
+  background-color: #e11bb9;
+  border-style: dashed;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: large;
+  
+}
