@@ -1,0 +1,55 @@
+extends layout 
+ 
+block content 
+  h1= title 
+ 
+  if (toShow == null) 
+    h2 No instance to delete 
+  else 
+    - let umbrellaid = toShow._id 
+    - let umbrella_type = toShow.color 
+    - let umbrellacost = toShow.cost 
+    - let umbrellasize = toShow.hieght 
+    - let actionid = "/resource/umbrellas/" + umbrellaid 
+    script let actionid = "#{actionid}" 
+    div 
+      div.row 
+        div(class='umbrellaAttr mr-3') Umbrella ID is: 
+        div #{umbrellaid} 
+      div.row 
+        div(class='umbrellaAttr mr-3') Umbrella color is: 
+        div #{umbrella_type} 
+      div.row 
+        div(class='umbrellaAttr mr-3') Umbrella cost is: 
+        div #{umbrellacost} 
+      div.row 
+        div(class='umbrellaAttr mr-3') Umbrella height is: 
+        div #{umbrellasize} 
+ 
+    button(class="btn btn-danger m-2" onclick="deleteOnid()") Delete 
+    button(class="btn btn-secondary m-2" onclick="cancel()") Cancel 
+ 
+  script. 
+    function cancel() { 
+      // Go back to the home page for the costume collection 
+      window.location.href='/umbrella' 
+    } 
+  script. 
+    function deleteOnid() { 
+      console.log("starting delete") 
+      // delete first 
+      fetch(actionid, { 
+        method: 'DELETE'    
+      }).then((resp) => { 
+        return resp.json(); // or resp.text() or whatever the server sends 
+      }).then((body) => { 
+        alert("Delete succeded") 
+        window.location.href='/umbrella' 
+        // TODO handle body 
+      }).catch((error) => { 
+        // TODO handle error 
+        alert("Delete failed " + error ) 
+      }); 
+    } 
+ 
+       
