@@ -5,9 +5,19 @@ block content
   div(class="container-fluid")
   // - let results=[{colour:"red",cost:77,height :5},{colour:"blue",cost:99,height :7},{colour:"blue",cost:23.2 ,height:5}]
   - let items = results 
+    div(class="container-fluid") 
+  div(class="row") 
+    each item in items  
+      - let destination = `dispatch(\"/umbrella/update?id=${item._id}\")` 
+        div(class="row-sm-2", class="m-1") Item #{item.color}(#{item.cost}) is #{item.hieght} 
+         button.btn( class="btn-primary ml-1", onclick= destination) Update 
+  script. 
+    function dispatch(path){ 
+      window.location.href=path 
+    } 
   div(class="row")
     each value,index in results
-      div(class="col-sm-2" onclick=`buy(${index})`)  umbrella #{value.color} , cost #{value.cost}, height  #{value.hieght}
+        div(class="col-sm-2" onclick=`buy(${index})`)  umbrella #{value.color} , cost #{value.cost}, height  #{value.hieght}
   script.
     function buy(index)
     {
