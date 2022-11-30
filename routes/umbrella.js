@@ -26,10 +26,10 @@ module.exports = router;
 router.get('/detail', umbrella_controlers.umbrella_view_one_Page); 
  
  /* GET create costume page */ 
-router.get('/create', umbrella_controlers.umbrella_create_Page); 
+router.get('/create', secured,umbrella_controlers.umbrella_create_Page); 
  
 /* GET update costume page */ 
 router.get('/update', secured,umbrella_controlers.umbrella_update_Page); 
  
 /* GET delete costume page */ 
-router.get('/delete', umbrella_controlers.umbrella_delete_Page);    
+router.get('/delete', secured,umbrella_controlers.umbrella_delete_Page);    
