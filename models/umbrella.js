@@ -1,7 +1,10 @@
 const mongoose = require("mongoose") 
     const umbrellaSchema = mongoose.Schema({ 
     color: String, 
-    cost: Number, 
+    cost: {
+        type:Number,
+        min:2,
+        max:12,} ,
     hieght: Number 
     }) 
  
